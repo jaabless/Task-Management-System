@@ -9,23 +9,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="container center">
-    <h1>Task List</h1>
-
-    <button onclick="window.location.href='task?action=new'" style="background-color: #28a745; color: white; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer;">
-      Add New Task
+    <button onclick="window.location.href='task?action=home'" class="add-task-button">
+      Home
     </button>
 
-    <form method="get" action="task">
-        <label for="status">Filter by Status:</label>
-        <select name="status" id="status" onchange="this.form.submit()">
-            <option value="All" <%= "All".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>All</option>
-            <option value="Pending" <%= "Pending".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>Pending</option>
-            <option value="In Progress" <%= "In Progress".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>In Progress</option>
-            <option value="Completed" <%= "Completed".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>Completed</option>
-        </select>
+    <h1>Task List</h1>
 
-    </form>
-    <br/>
+    <div class="task-header">
+      <button onclick="window.location.href='task?action=new'">
+        Add New Task
+      </button>
+
+      <form method="get" action="task">
+        <label for="status">Filter:</label>
+        <select name="status" id="status" onchange="this.form.submit()">
+          <option value="All" <%= "All".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>All</option>
+          <option value="Pending" <%= "Pending".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>Pending</option>
+          <option value="In Progress" <%= "In Progress".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>In Progress</option>
+          <option value="Completed" <%= "Completed".equals(request.getAttribute("selectedStatus")) ? "selected" : "" %>>Completed</option>
+        </select>
+      </form>
+    </div>
 
 
     <table>
