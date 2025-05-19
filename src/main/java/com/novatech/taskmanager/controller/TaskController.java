@@ -41,6 +41,9 @@ public class TaskController extends HttpServlet {
                 case "delete":
                     deleteTask(request, response);
                     break;
+                case "home":
+                    homeTask(request, response);
+                    break;
                 default:
                     listTasks(request, response);
                     break;
@@ -142,6 +145,12 @@ public class TaskController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         taskDAO.deleteTask(id);
         response.sendRedirect("task");
+    }
+
+    private void homeTask(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setAttribute("task", new Task());
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
 
