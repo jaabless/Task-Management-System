@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="container center">
+    <button onclick="window.location.href='task?action=home'" class="add-task-button">
+       Home
+    </button>
+    <button onclick="window.location.href='task?action=list'" class="add-task-button">
+        View Tasks
+     </button>
     <h1><%= (request.getParameter("id") == null) ? "Add New Task" : "Edit Task" %></h1>
 
     <%
@@ -14,7 +20,7 @@
         boolean isEdit = task != null && task.getId() != 0;
     %>
 
-    <form action="task?action=<%= isEdit ? "update" : "insert" %>" method="post">
+    <form action="task?action=<%= isEdit ? "update" : "insert" %>" method="post" class="formContainer">
         <% if (isEdit) { %>
             <input type="hidden" name="id" value="<%= task.getId() %>">
         <% } %>
@@ -34,13 +40,12 @@
             <option value="Pending" <%= "Pending".equals(task.getStatus()) ? "selected" : "" %>>Pending</option>
             <option value="In Progress" <%= "In Progress".equals(task.getStatus()) ? "selected" : "" %>>In Progress</option>
             <option value="Completed" <%= "Completed".equals(task.getStatus()) ? "selected" : "" %>>Completed</option>
-        </select><br>
+        </select>
+        <br>
 
-
-        <button type="submit"><%= isEdit ? "Update" : "Add" %> Task</button>
+        <button type="submit" class="submitBtn" ><%= isEdit ? "Update" : "Add" %> Task</button>
     </form>
     <br>
 
-    <a href="task">← Back to Task List</a>
 </body>
 </html>
