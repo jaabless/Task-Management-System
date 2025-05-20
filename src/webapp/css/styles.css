@@ -57,6 +57,7 @@ button, .btn {
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .submitBtn {
@@ -68,10 +69,13 @@ button, .btn {
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.3s ease;
+
 }
 
 button:hover, .btn:hover {
     background-color: #218838;
+
 }
 
 .add-task-button {
