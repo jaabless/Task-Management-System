@@ -10,18 +10,29 @@ import java.util.List;
 
 public class TaskDAO {
 
-    public void addTask(Task task) {
+    public int addTask(Task task) {
         String sql = "INSERT INTO tasks (title, description, due_date, status) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DBConnection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        int generatedId = -1;
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
             stmt.setString(1, task.getTitle());
             stmt.setString(2, task.getDescription());
             stmt.setDate(3, Date.valueOf(task.getDueDate()));
             stmt.setString(4, task.getStatus());
             stmt.executeUpdate();
+
+            ResultSet keys = stmt.getGeneratedKeys();
+            if (keys.next()) {
+                generatedId = keys.getInt(1);
+                task.setId(generatedId); // Optional: sync the task object's ID
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return generatedId;
     }
+
 
     public List<Task> getAllTasks() {
         List<Task> tasks = new ArrayList<>();
