@@ -20,7 +20,7 @@
     <% if (request.getAttribute("error") != null) { %>
         <p style="color:red;"><%= request.getAttribute("error") %></p>
     <% } %>
-    <p>Don't have an account? <a href="signup.jsp">Sign up here</a></p>
+    <p>Dont have an account? <a href="signup.jsp">Sign up here</a></p>
 </div>
 </body>
 </html>
