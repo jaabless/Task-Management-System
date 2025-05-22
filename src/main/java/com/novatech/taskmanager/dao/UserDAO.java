@@ -26,7 +26,7 @@ public class UserDAO {
         return null; // user not found
     }
 
-    // Optional: method to add a new user during signup
+    // method to add a new user during signup
     public boolean addUser(User user) {
         String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         try (Connection conn = DBConnection.getConnection();
