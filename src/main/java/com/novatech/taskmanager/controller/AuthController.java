@@ -32,7 +32,7 @@ public class AuthController extends HttpServlet {
             boolean registered = userDAO.register(user);
 
             if (registered) {
-                res.sendRedirect("login.jsp");
+                res.sendRedirect("index.jsp");
             } else {
                 System.out.println("error with sign up");
                 req.setAttribute("error", "Signup failed. Username already exist.");
