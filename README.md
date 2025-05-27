@@ -29,7 +29,7 @@ A simple web-based Task Management System built with **Java**, **JSP**, **Servle
 
 ## 📁 Project Structure
 
-![image](https://github.com/user-attachments/assets/9c58952e-ea49-4848-9c1d-494b91e483df)
+![image](https://github.com/user-attachments/assets/bdeb95f3-cf83-45bb-b2f9-7fd4c118b8f6)
 
 ---
 
@@ -37,7 +37,7 @@ A simple web-based Task Management System built with **Java**, **JSP**, **Servle
 
 **How to Run**
 
-1. Ensure Java, MySQL Server and TomCat are installed and configured.
+1. Ensure Java, MySQL Server, Workbench and TomCat are installed and configured.
 2. Clone this repository
    ```bash
    https://github.com/jaabless/Task-Management-System.git
@@ -54,6 +54,13 @@ A simple web-based Task Management System built with **Java**, **JSP**, **Servle
 ---
 
 ## 📷 Screenshots
+
+**Login Page**
+![image](https://github.com/user-attachments/assets/65c3d40e-04f7-4f09-83bc-ce82059cc502)
+
+**Signup Page**
+![image](https://github.com/user-attachments/assets/6709f5b4-5052-4b25-a090-0250639b329c)
+
 **Task Lists**
 ![image](https://github.com/user-attachments/assets/04d6ee5c-3b07-4145-80a6-334aea11c4bf)
 
